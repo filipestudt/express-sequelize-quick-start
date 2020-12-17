@@ -1,21 +1,23 @@
 const Sequelize = require('sequelize');
+const dbConfig = require('./config');
+const fs = require('fs');
+const path = require('path');
 
-const User = require('../models/User');
-const Post = require('../models/Post');
+const connection = new Sequelize(dbConfig);
 
-const connection = new Sequelize({
-    dialect: 'postgres',
-    host: 'localhost',
-    username: 'postgres',
-    password: 'admin',
-    database: 'blog',
-    define: {
-        timestamps: false,
-        underscored: true,
-    }
-});
+const modelsPath = path.join(__dirname, '../models');
 
-User.init(connection);
-Post.init(connection);
+var models = fs.readdirSync(modelsPath);
+var modelsArr = [];
+
+for (let model of models) {
+    let modelInstance = require(modelsPath + '/' + model);
+    modelInstance.init(connection);
+    modelsArr.push(modelInstance);
+}
+
+for (let model of modelsArr) {
+    model.associate(connection.models);
+}
 
 module.exports = connection;
