@@ -7,6 +7,7 @@ var config = {
     schema: 'public',
     host: 'localhost',
     port: '5432',
+    directory: 'src/models',
     additional: {
         schema: 'public'
     }
