@@ -20,7 +20,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js",
-    "configure": "npm run clone-sequelize-auto && npm run install-dependencies && npm run configure-sequelize-auto",
+    "configure": "npm run install-dependencies && npm run clone-sequelize-auto && npm run install-dependencies && npm run configure-sequelize-auto",
     "clone-sequelize-auto": "git clone https://github.com/filipestudt/sequelize-auto _dev/sequelize-auto",
     "configure-sequelize-auto": "cd _dev/sequelize-auto && npm i",
     "install-dependencies": "npm i && npm i -D",
@@ -30,7 +30,8 @@
     "generate-routes-from-file": "node _dev/generate-routes-from-file.js",
     "generate-routes-from-model": "node _dev/generate-routes-from-model.js",
     "generate-routes-file-from-model": "node _dev/generate-routes-file-from-model.js",
-    "generate-routes-file": "node _dev/generate-routes-file.js"
+    "generate-routes-file": "node _dev/generate-routes-file.js",
+    "init-from-db": "npm run generate-models && npm run generate-routes-from-model"
   },
   "author": "",
   "license": "ISC"
