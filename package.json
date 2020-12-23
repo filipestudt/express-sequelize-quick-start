@@ -19,9 +19,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js",
-    "config": "npm run clone-sequelize-auto && configure-sequelize-auto",
+    "config": "npm run clone-sequelize-auto && npm run configure-sequelize-auto && npm run install-dependencies",
     "clone-sequelize-auto": "git clone https://github.com/filipestudt/sequelize-auto _dev/sequelize-auto",
     "configure-sequelize-auto": "cd _dev/sequelize-auto && npm i",
+    "install-dependencies": "npm i && npm i -D",
     "generate-models": "node _dev/generate-models.js",
     "generate-requests": "node _dev/generate-requests.js",
     "generate-routes": "node _dev/generate-routes.js"
