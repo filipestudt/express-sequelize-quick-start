@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "consign": "^0.1.6",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-routes-creator": "^0.2.0",
     "insomnia-request-generator": "^0.1.1",
@@ -19,7 +20,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js",
-    "config": "npm run clone-sequelize-auto && npm run configure-sequelize-auto && npm run install-dependencies",
+    "configure": "npm run clone-sequelize-auto && npm run install-dependencies && npm run configure-sequelize-auto",
     "clone-sequelize-auto": "git clone https://github.com/filipestudt/sequelize-auto _dev/sequelize-auto",
     "configure-sequelize-auto": "cd _dev/sequelize-auto && npm i",
     "install-dependencies": "npm i && npm i -D",
