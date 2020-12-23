@@ -25,7 +25,11 @@
     "install-dependencies": "npm i && npm i -D",
     "generate-models": "node _dev/generate-models.js",
     "generate-requests": "node _dev/generate-requests.js",
-    "generate-routes": "node _dev/generate-routes.js"
+    "generate-routes": "node _dev/generate-routes.js",
+    "generate-routes-from-file": "node _dev/generate-routes-from-file.js",
+    "generate-routes-from-model": "node _dev/generate-routes-from-model.js",
+    "generate-routes-file-from-model": "node _dev/generate-routes-file-from-model.js",
+    "generate-routes-file": "node _dev/generate-routes-file.js"
   },
   "author": "",
   "license": "ISC"
