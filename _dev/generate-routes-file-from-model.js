@@ -1,12 +1,9 @@
 const db = require('../src/database');
-const path = require('path');
 
 const expressRoutesCreator = require('express-routes-creator');
 
-expressRoutesCreator.generateFromModel({
-    routesOutput: 'src/routes',
-    controllersOutput: 'src/controllers',
+expressRoutesCreator.generateFileFromModel({
     models: db.models,
-    consign: true,
-    //replace: true
+    output: 'routes',
+    replace: true
 })
