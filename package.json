@@ -23,7 +23,7 @@
     "configure": "npm run install-dependencies && npm run clone-sequelize-auto && npm run install-dependencies && npm run configure-sequelize-auto",
     "clone-sequelize-auto": "git clone https://github.com/filipestudt/sequelize-auto _dev/sequelize-auto",
     "configure-sequelize-auto": "cd _dev/sequelize-auto && npm i",
-    "install-dependencies": "npm i && npm i -D",
+    "install-dependencies": "npm install",
     "generate-models": "node _dev/generate-models.js",
     "generate-requests": "node _dev/generate-requests.js",
     "generate-routes": "node _dev/generate-routes.js",
